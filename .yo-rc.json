@@ -1,0 +1,7 @@
+{
+  "generator-react-webpack": {
+    "appName": "tunein",
+    "style": "css",
+    "postcss": false
+  }
+}

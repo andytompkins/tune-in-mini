@@ -1,0 +1,21 @@
+.stationlist-component input {
+  color: #000000;
+}
+
+.stationlist-component ul {
+  list-style-type: none;
+}
+
+.stationlist-component li:before {
+  content: "♪";
+  margin-right: 6px;
+}
+
+.tags {
+  padding-left: 12px;
+  color: #667667;
+}
+
+.clickable {
+  cursor: pointer;
+}
