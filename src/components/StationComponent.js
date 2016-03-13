@@ -9,7 +9,6 @@ class StationComponent extends React.Component {
   
   constructor(props) {
     super(props);
-    console.log("station cons");
     this.state = {
       'lastStation': -1
     };
@@ -36,7 +35,6 @@ class StationComponent extends React.Component {
   }
   
   render() {
-    console.dir(this.props);
     if (!this.props.station.hasOwnProperty('id')) {
       return (
         <div className="station-component"></div>

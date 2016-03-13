@@ -23,7 +23,8 @@ class AppComponent extends React.Component {
   componentDidMount() {
     this.req = request.get(apiUrl).end(function(err, res) {
       if (err || !res.ok) {
-        console.log('error making request for data');
+        //TODO: handle error gracefully
+        console.log('error making request for data'); //eslint-disable-line no-console
       } else {
         this.setState({ 'stations': res.body.data })
       }
@@ -51,10 +52,7 @@ class AppComponent extends React.Component {
         <StationListComponent stations={ this.state.stations } changer={ this.changeSelected } />
         {
           (() => {
-            console.log("checking for station comp");
             if (this.state.selected !== -1 && this.state.stations.length > 0) {
-              console.log("displaying it");
-              console.dir(this.state);
               return (
                 <StationComponent station={ this.state.stations[this.state.selected] } />
               );

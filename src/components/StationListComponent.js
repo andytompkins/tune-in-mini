@@ -15,7 +15,7 @@ class StationListComponent extends React.Component {
     this.handleSearch = this.handleSearch.bind(this);
   }
   
-  handleStationClick(id, event) {
+  handleStationClick(id, event) { // eslint-disable-line no-unused-vars
     if (this.props.changer !== null && typeof this.props.changer == 'function') {
       this.props.changer(id);
     }
@@ -36,7 +36,7 @@ class StationListComponent extends React.Component {
             if (typeof this.state.search === 'undefined' || this.state.search === '') { return true; }
             //console.log("tags are " + val.tags.toString() + " search is " + this.state.search);
             return val.tags.toString().indexOf(this.state.search) !== -1;
-          }).map((station, index) => {
+          }).map((station, index) => { // eslint-disable-line no-unused-vars
             return <li className="clickable" key={ station.id } onClick={ this.handleStationClick.bind(this, station.id) }>
               { station.name }
               <span className="tags">[{ station.tags.join(' ') }]</span>
