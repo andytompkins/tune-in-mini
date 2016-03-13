@@ -9,10 +9,6 @@ class StationComponent extends React.Component {
   
   constructor(props) {
     super(props);
-    this.state = {
-      'lastStation': -1
-    };
-    this.audio = null;
   }
   
   componentDidMount() {
@@ -20,17 +16,8 @@ class StationComponent extends React.Component {
   }
   
   componentDidUpdate() {
-    if (this.props.station.id !== this.state.lastStation && this.audio !== null) {
+    if (typeof this.audio !== 'undefined' ) {
       this.audio.load();
-    }
-  }
-  
-  componentWillReceiveProps(nextProps) {
-    if (this.state.lastStation === -1) {
-      this.setState({ 'lastStation': nextProps.station.id });
-    } else if (this.props.station.id !== nextProps.station.id && this.audio !== null) {
-      // this is not ideal.
-      this.audio.pause();
     }
   }
   
@@ -58,7 +45,6 @@ class StationComponent extends React.Component {
 
 StationComponent.displayName = 'StationComponent';
 
-// Uncomment properties you need
 StationComponent.propTypes = {
   'station': React.PropTypes.object.isRequired
 };

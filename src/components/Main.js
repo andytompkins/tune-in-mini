@@ -21,14 +21,14 @@ class AppComponent extends React.Component {
   }
   
   componentDidMount() {
-    this.req = request.get(apiUrl).end(function(err, res) {
+    this.req = request.get(apiUrl).end((err, res) => {
       if (err || !res.ok) {
         //TODO: handle error gracefully
         console.log('error making request for data'); //eslint-disable-line no-console
       } else {
         this.setState({ 'stations': res.body.data })
       }
-    }.bind(this));
+    });
   }
   
   componentWillUnmount() {
@@ -39,7 +39,7 @@ class AppComponent extends React.Component {
   
   changeSelected(newSelectionId) {
     for (var i = 0; i < this.state.stations.length; i++) {
-      if (this.state.stations[i].id === newSelectionId) {
+      if (this.state.stations[i].id === newSelectionId && i !== this.state.selected) {
         this.setState({ 'selected': i });
         break;
       }

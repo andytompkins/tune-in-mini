@@ -50,7 +50,6 @@ class StationListComponent extends React.Component {
 
 StationListComponent.displayName = 'StationListComponent';
 
-// Uncomment properties you need
 StationListComponent.propTypes = {
   'stations': React.PropTypes.array.isRequired,
   'changer': React.PropTypes.func.isRequired
